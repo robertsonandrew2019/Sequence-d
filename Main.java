@@ -1,6 +1,7 @@
-public class Main {
+ppublic class Main {
 
     public static void main(String[] args) {
+       //perfect squares
         int n = 0;
         System.out.print("Perfect squares: ");
         while (n < 10) {
@@ -10,6 +11,7 @@ public class Main {
            }
         System.out.println();
 
+        //perfect cubes
         n = 0;
         System.out.print("Perfect cubes: ");
         while (n < 10) {
@@ -19,41 +21,53 @@ public class Main {
         }
         System.out.println();
 
-        n = 1;
+        //fibonacci sequences
         System.out.print("Fibonacci: ");
         int[]fibonacci = new int[10];
         fibonacci[0] = 1;
         fibonacci[1] = 2;
-        for(int i = 2; i < fibonacci.length; i++) {
-            fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2];
+        n = 2;
+        while (n < fibonacci.length) {
+            fibonacci[n] = fibonacci[n - 1] + fibonacci[n - 2];
+            n++;
         }
-        for(int i = 0; i < fibonacci.length; i++) {
-            System.out.printf("%d ", fibonacci[i]);
+        n = 0;
+        while (n < fibonacci.length) {
+            System.out.printf("%d ", fibonacci[n]);
+            n++;
         }
         System.out.println();
-
+        
+        //prime numbers
         System.out.print("Prime numbers: ");
-        for (int num = 2; num < 30; num++) {
+        int num = 2;
+        while (num < 30) {
             boolean flag = false;
-            for (int i = 2; i <= num / 2; ++i) {
+            for (int i = 2; i <= num / 2; i++) {
                 if (num % i == 0) {
                     flag = true;
                     break;
                 }
             }
-            if (!flag)
+            if (!flag) {
                 System.out.printf("%d ", num);
+            }
+            num++;
         }
         System.out.println();
 
         System.out.print("Triangle Numbers: ");
         int[]triangles = new int[10];
         triangles[0] = 1;
-        for(int i = 1; i < triangles.length; i++) {
-            triangles[i] = triangles[i - 1] + i + 1;
+        n = 1;
+        while (n < triangles.length) {
+            triangles[n] = triangles[n - 1] + (n + 1);
+            n++;
         }
-        for(int i = 0; i < triangles.length; i++) {
-            System.out.printf("%d ", triangles[i]);
+        n = 0;
+        while (n < triangles.length) {
+            System.out.printf("%d ", triangles[n]);
+            n++;
         }
 
     }
