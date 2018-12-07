@@ -1,4 +1,4 @@
-ppublic class Main {
+public class Main {
 
     public static void main(String[] args) {
        //perfect squares
@@ -21,33 +21,33 @@ ppublic class Main {
         }
         System.out.println();
 
-        //fibonacci sequences
+        //fibonacci sequence
         System.out.print("Fibonacci: ");
-        int[]fibonacci = new int[10];
-        fibonacci[0] = 1;
-        fibonacci[1] = 2;
-        n = 2;
-        while (n < fibonacci.length) {
-            fibonacci[n] = fibonacci[n - 1] + fibonacci[n - 2];
+        int f1 = 0;
+        int f2 = 1;
+        int f3;
+        n = 1;
+        while (n <= 10) {
+            f3 = f1 + f2;
+            f1 = f2;
+            f2 = f3;
             n++;
-        }
-        n = 0;
-        while (n < fibonacci.length) {
-            System.out.printf("%d ", fibonacci[n]);
-            n++;
+            System.out.printf("%d ", f3);
         }
         System.out.println();
-        
-        //prime numbers
+
+        //prime numbers - needs revision
         System.out.print("Prime numbers: ");
         int num = 2;
         while (num < 30) {
             boolean flag = false;
-            for (int i = 2; i <= num / 2; i++) {
-                if (num % i == 0) {
+            n = 2;
+            while (n <= (num / 2)) {
+                if (num % n == 0) {
                     flag = true;
                     break;
                 }
+                n++;
             }
             if (!flag) {
                 System.out.printf("%d ", num);
@@ -56,19 +56,13 @@ ppublic class Main {
         }
         System.out.println();
 
+        //triangle numbers
         System.out.print("Triangle Numbers: ");
-        int[]triangles = new int[10];
-        triangles[0] = 1;
         n = 1;
-        while (n < triangles.length) {
-            triangles[n] = triangles[n - 1] + (n + 1);
+        while (n <= 10) {
+            int tri = (n * (n + 1) / 2);
+            System.out.printf("%d ", tri);
             n++;
         }
-        n = 0;
-        while (n < triangles.length) {
-            System.out.printf("%d ", triangles[n]);
-            n++;
-        }
-
     }
 }
